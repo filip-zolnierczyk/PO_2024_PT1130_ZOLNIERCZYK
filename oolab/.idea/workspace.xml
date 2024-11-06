@@ -5,27 +5,23 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="33c834e6-d369-4334-92b7-a328ffe2e36b" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/Vector2d.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/MapDirection.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/agh/ics/oop/model/MapDirectionTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/agh/ics/oop/model/OptionsParserTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/test/java/agh/ics/oop/model/Vector2dTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/Animal.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/executionHistory/executionHistory.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/fileHashes.lock" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/8.8/fileHashes/resourceHashesCache.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/outputFiles.bin" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.gradle/file-system.probe" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/file-system.probe" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" afterPath="$PROJECT_DIR$/build.gradle" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/agh/ics/oop/World$1.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/agh/ics/oop/World$1.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/build/classes/java/main/agh/ics/oop/World.class" beforeDir="false" afterPath="$PROJECT_DIR$/build/classes/java/main/agh/ics/oop/World.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/compileTransaction/stash-dir/World.class.uniqueId0" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/Vector2d.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/Vector2d.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/World.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/World.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/MapDirection.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/agh/ics/oop/model/MapDirection.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/agh/ics/oop/model/Vector2dTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/test/java/agh/ics/oop/model/Vector2dTest.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -74,39 +70,39 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Gradle.MapDirectionTest.executor": "Run",
-    "Gradle.MapDirectionTest.testNextEast.executor": "Run",
-    "Gradle.MapDirectionTest.testNextNorth.executor": "Run",
-    "Gradle.MapDirectionTest.testNextSouth.executor": "Run",
-    "Gradle.MapDirectionTest.testPreviousNorth.executor": "Run",
-    "Gradle.MapDirectionTest.testPreviousSouth.executor": "Run",
-    "Gradle.MapDirectionTest.testPreviousWest.executor": "Run",
-    "Gradle.MapDirectionTest.testPrevoiusEast.executor": "Run",
-    "Gradle.OptionsParserTest.executor": "Run",
-    "Gradle.Vector2dTest.executor": "Run",
-    "Gradle.Vector2dTest.testFollows.executor": "Run",
-    "Gradle.Vector2dTest.testOpposite.executor": "Run",
-    "Gradle.Vector2dTest.testToString.executor": "Run",
-    "Gradle.oolab [:agh.ics.oop.World.main()].executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
-    "git-widget-placeholder": "lab1",
-    "kotlin-language-version-configured": "true",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "onboarding.tips.debug.path": "C:/Users/Filip/IdeaProjects/oolab/src/main/java/org/example/Main.java",
-    "project.structure.last.edited": "Problems",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.2",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Gradle.MapDirectionTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MapDirectionTest.testNextEast.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MapDirectionTest.testNextNorth.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MapDirectionTest.testNextSouth.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MapDirectionTest.testPreviousNorth.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MapDirectionTest.testPreviousSouth.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MapDirectionTest.testPreviousWest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.MapDirectionTest.testPrevoiusEast.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.OptionsParserTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Vector2dTest.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Vector2dTest.testFollows.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Vector2dTest.testOpposite.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.Vector2dTest.testToString.executor&quot;: &quot;Run&quot;,
+    &quot;Gradle.oolab [:agh.ics.oop.World.main()].executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;#4 on lab2&quot;,
+    &quot;kotlin-language-version-configured&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;onboarding.tips.debug.path&quot;: &quot;C:/Users/Filip/IdeaProjects/oolab/src/main/java/org/example/Main.java&quot;,
+    &quot;project.structure.last.edited&quot;: &quot;Problems&quot;,
+    &quot;project.structure.proportion&quot;: &quot;0.0&quot;,
+    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
-  <component name="RunManager" selected="Gradle.OptionsParserTest">
+}</component>
+  <component name="RunManager" selected="Gradle.Vector2dTest">
     <configuration name="MapDirectionTest" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
@@ -229,9 +225,9 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Gradle.Vector2dTest" />
         <item itemvalue="Gradle.OptionsParserTest" />
         <item itemvalue="Gradle.MapDirectionTest" />
-        <item itemvalue="Gradle.Vector2dTest" />
         <item itemvalue="Gradle.Vector2dTest.testOpposite" />
         <item itemvalue="Gradle.Vector2dTest.testFollows" />
       </list>
@@ -263,6 +259,8 @@
       <workItem from="1730201632145" duration="122000" />
       <workItem from="1730201768688" duration="702000" />
       <workItem from="1730227048431" duration="2240000" />
+      <workItem from="1730371454809" duration="4288000" />
+      <workItem from="1730890556978" duration="694000" />
     </task>
     <servers />
   </component>
