@@ -1,8 +1,8 @@
 package agh.ics.oop.model;
 
 public class Vector2d {
-    private final int x;
-    private final int y;
+    public final int x;
+    public final int y;
 
 
     public Vector2d(int x, int y) {
@@ -12,6 +12,10 @@ public class Vector2d {
 
     public int getX() {
         return x;
+    }
+
+    public int getY() {
+        return y;
     }
 
     @Override
@@ -53,5 +57,9 @@ public class Vector2d {
         if (!(other instanceof Vector2d)) return false;
         Vector2d otherVector = (Vector2d) other;
         return Double.compare(this.x, otherVector.x) == 0 && Double.compare(this.y, otherVector.y) == 0;
+    }
+    public int hashCode()
+    {
+        return toString().hashCode();
     }
 }
