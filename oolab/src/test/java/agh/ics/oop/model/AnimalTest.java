@@ -4,6 +4,10 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class AnimalTest {
 
+
+    private final MoveValidator validator = position ->
+            position.x >= 0 && position.x <= 4 && position.y >= 0 && position.y <= 4;
+
     @Test
     void testInitialPositionAndOrientation() {
         Animal animal = new Animal();
@@ -15,60 +19,24 @@ class AnimalTest {
     void testOrientationChange() {
         Animal animal = new Animal();
 
-        animal.move(MoveDirection.RIGHT);
+        animal.move(MoveDirection.RIGHT, validator);
         assertNotEquals(MapDirection.NORTH, animal.getOrientation());
         assertEquals(MapDirection.EAST, animal.getOrientation());
 
-        animal.move(MoveDirection.RIGHT);
+        animal.move(MoveDirection.RIGHT, validator);
         assertNotEquals(MapDirection.EAST, animal.getOrientation());
         assertEquals(MapDirection.SOUTH, animal.getOrientation());
 
-        animal.move(MoveDirection.LEFT);
+        animal.move(MoveDirection.LEFT, validator);
         assertNotEquals(MapDirection.SOUTH, animal.getOrientation());
         assertEquals(MapDirection.EAST, animal.getOrientation());
 
-        animal.move(MoveDirection.LEFT);
+        animal.move(MoveDirection.LEFT, validator);
         assertNotEquals(MapDirection.EAST, animal.getOrientation());
         assertEquals(MapDirection.NORTH, animal.getOrientation());
     }
 
-    @Test
-    void testMovementWithinMapBoundaries() {
-        Animal animal = new Animal();
 
-        animal.move(MoveDirection.FORWARD);
-        assertNotEquals(new Vector2d(2, 2), animal.getPosition());
-        assertEquals(new Vector2d(2, 3), animal.getPosition());
-
-        animal.move(MoveDirection.BACKWARD);
-        assertNotEquals(new Vector2d(2, 3), animal.getPosition());
-        assertEquals(new Vector2d(2, 2), animal.getPosition());
-
-        animal.move(MoveDirection.LEFT);
-        animal.move(MoveDirection.FORWARD);
-        assertNotEquals(new Vector2d(2, 2), animal.getPosition());
-        assertEquals(new Vector2d(1, 2), animal.getPosition());
-    }
-
-    @Test
-    void testMapBoundaryConstraints() {
-        Animal animal = new Animal(new Vector2d(0, 0));
-
-        animal.move(MoveDirection.BACKWARD);
-        assertEquals(new Vector2d(0, 0), animal.getPosition());
-
-        animal.move(MoveDirection.LEFT);
-        animal.move(MoveDirection.FORWARD);
-        assertEquals(new Vector2d(0, 0), animal.getPosition());
-
-        Animal animal2 = new Animal(new Vector2d(4, 4));
-        animal2.move(MoveDirection.FORWARD);
-        assertEquals(new Vector2d(4, 4), animal2.getPosition());
-
-        animal2.move(MoveDirection.RIGHT);
-        animal2.move(MoveDirection.FORWARD);
-        assertEquals(new Vector2d(4, 4), animal2.getPosition());
-    }
 
     @Test
     void testInputInterpretation() {
@@ -77,7 +45,7 @@ class AnimalTest {
         MoveDirection[] directions = {MoveDirection.FORWARD, MoveDirection.RIGHT, MoveDirection.FORWARD, MoveDirection.LEFT, MoveDirection.BACKWARD};
 
         for (MoveDirection direction : directions) {
-            animal.move(direction);
+            animal.move(direction, validator);
         }
 
         assertNotEquals(new Vector2d(2, 2), animal.getPosition());

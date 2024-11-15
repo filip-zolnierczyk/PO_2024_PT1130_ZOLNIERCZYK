@@ -16,25 +16,36 @@ public class Animal {
         this.orientation = MapDirection.NORTH;
     }
 
-    public void move(MoveDirection direction) {
-        switch (direction) {
-            case FORWARD -> attemptMove(orientation.toUnitVector());
-            case BACKWARD -> attemptMove(orientation.toUnitVector().opposite());
-            case LEFT -> orientation = orientation.previous();
-            case RIGHT -> orientation = orientation.next();
-        }
-    }
+    public void move(MoveDirection direction, MoveValidator validator) {
+        Vector2d movement = switch (direction) {
+            case FORWARD -> orientation.toUnitVector();
+            case BACKWARD -> orientation.toUnitVector().opposite();
+            case LEFT -> {
+                orientation = orientation.previous();
+                yield null;
+            }
+            case RIGHT -> {
+                orientation = orientation.next();
+                yield null;
+            }
+        };
 
-    private void attemptMove(Vector2d movement) {
-        Vector2d newPosition = position.add(movement);
-        if (newPosition.follows(LOWER_BOUND) && newPosition.precedes(UPPER_BOUND))  {
-            position = newPosition;
+        if (movement != null) {
+            Vector2d newPosition = position.add(movement);
+            if (validator.canMoveTo(newPosition)) {
+                position = newPosition;
+            }
         }
     }
 
     @Override
     public String toString() {
-        return "Animal at " + position.toString() + " facing " + orientation.toString();
+        return switch (orientation) {
+            case NORTH -> "^";
+            case SOUTH -> "v";
+            case EAST -> ">";
+            case WEST -> "<";
+        };
     }
 
     public boolean isAt(Vector2d position) {
@@ -49,3 +60,4 @@ public class Animal {
         return orientation;
     }
 }
+
