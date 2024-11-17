@@ -19,14 +19,13 @@ public class Simulation {
         this.moves = moves;
         this.map = map;
 
-
-
         for (Vector2d position : initialPositions) {
             Animal animal = new Animal(position);
             if (map.place(animal)) {
                 animals.add(animal);
+                System.out.println("Animal added successfully at: " + position);
             } else {
-                System.out.println("Nie można umieścić zwierzęcia na pozycji " + position);
+                System.out.println("Failed to add animal at: " + position);
             }
         }
     }

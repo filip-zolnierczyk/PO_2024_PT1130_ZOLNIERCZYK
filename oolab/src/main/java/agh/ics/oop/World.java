@@ -5,9 +5,9 @@ import java.util.List;
 
 public class World {
     public static void main(String[] args) {
-        WorldMap map = new RectangularMap(5, 5);
+        WorldMap map = new GrassField(10);
         List<MoveDirection> directions = OptionsParser.parse(args);
-        List<Vector2d> positions = List.of(new Vector2d(2, 2), new Vector2d(3, 4));
+        List<Vector2d> positions = List.of(new Vector2d(-3, -3), new Vector2d(3, 3));
         Simulation simulation = new Simulation(positions, directions, map);
         simulation.run();
     }
