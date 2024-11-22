@@ -44,8 +44,8 @@ class SimulationTest {
         simulation.run();
 
 
-        Animal animal1 = map.objectAt(new Vector2d(2, 3));
-        Animal animal2 = map.objectAt(new Vector2d(1, 2));
+        WorldElement animal1 = map.objectAt(new Vector2d(2, 3));
+        WorldElement animal2 = map.objectAt(new Vector2d(1, 2));
 
         assertNotNull(animal1);
         assertNotNull(animal2);
