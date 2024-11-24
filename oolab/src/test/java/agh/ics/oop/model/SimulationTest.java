@@ -16,16 +16,11 @@ class SimulationTest {
 
     @BeforeEach
     void setup() {
-
         map = new RectangularMap(5, 5);
-
-
         moves = Arrays.asList(
                 MoveDirection.FORWARD, MoveDirection.RIGHT, MoveDirection.FORWARD,
                 MoveDirection.LEFT, MoveDirection.BACKWARD, MoveDirection.FORWARD
         );
-
-
         initialPositions = Arrays.asList(new Vector2d(2, 2), new Vector2d(1, 1));
     }
 
@@ -43,18 +38,15 @@ class SimulationTest {
 
         simulation.run();
 
-
         WorldElement animal1 = map.objectAt(new Vector2d(2, 3));
         WorldElement animal2 = map.objectAt(new Vector2d(1, 2));
 
         assertNotNull(animal1);
         assertNotNull(animal2);
 
-
         assertEquals(new Vector2d(2, 3), animal1.getPosition());
         assertEquals(new Vector2d(1, 2), animal2.getPosition());
     }
-
 
     @Test
     void testMapVisualizationAfterSimulation() {
@@ -65,7 +57,7 @@ class SimulationTest {
         MapVisualizer visualizer = new MapVisualizer(map);
         String mapState = visualizer.draw(new Vector2d(0, 0), new Vector2d(4, 4));
 
-        System.out.println("Końcowy stan mapy:\n" + mapState);
+        System.out.println("Final map state:\n" + mapState);
 
         assertNotNull(mapState);
     }

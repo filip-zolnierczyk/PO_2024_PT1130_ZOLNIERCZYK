@@ -4,6 +4,7 @@ import agh.ics.oop.model.Animal;
 import agh.ics.oop.model.MoveDirection;
 import agh.ics.oop.model.Vector2d;
 import agh.ics.oop.model.WorldMap;
+import agh.ics.oop.model.exceptions.IncorrectPositionException;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -21,11 +22,11 @@ public class Simulation {
 
         for (Vector2d position : initialPositions) {
             Animal animal = new Animal(position);
-            if (map.place(animal)) {
+            try {
+                map.place(animal);
                 animals.add(animal);
-                System.out.println("Animal added successfully at: " + position);
-            } else {
-                System.out.println("Failed to add animal at: " + position);
+            } catch (IncorrectPositionException e) {
+                System.out.println("Skipping animal at invalid position: " + position + ". Reason: " + e.getMessage());
             }
         }
     }

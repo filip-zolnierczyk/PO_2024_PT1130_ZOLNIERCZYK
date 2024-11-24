@@ -1,6 +1,23 @@
 # Covers JetBrains IDEs: IntelliJ, RubyMine, PhpStorm, AppCode, PyCharm, CLion, Android Studio, WebStorm and Rider
 # Reference: https://intellij-support.jetbrains.com/hc/en-us/articles/206544839
 
+# Ignoruj foldery build i Gradle
+.gradle/
+build/
+
+# Ignoruj pliki IDE (IntelliJ IDEA)
+.idea/
+*.iml
+
+# Ignoruj pliki klas i innych kompilowanych plików
+*.class
+
+# Ignoruj pliki tymczasowe
+*.tmp
+*.log
+
+# Ignoruj dane systemowe
+file-system.probe
 # User-specific stuff
 .idea/**/workspace.xml
 .idea/**/tasks.xml
