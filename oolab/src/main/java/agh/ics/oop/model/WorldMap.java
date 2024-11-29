@@ -1,5 +1,7 @@
 package agh.ics.oop.model;
 import java.util.*;
+import agh.ics.oop.model.ConsoleMapDisplay;
+import agh.ics.oop.model.exceptions.IncorrectPositionException;
 
 /**
  * The interface responsible for interacting with the map of the world.
@@ -15,9 +17,9 @@ public interface WorldMap extends MoveValidator {
      * Place a animal on the map.
      *
      * @param animal The animal to place on the map.
-     * @return True if the animal was placed. The animal cannot be placed if the move is not valid.
+     * @throws IncorrectPositionException if the position is invalid or occupied.
      */
-    boolean place(Animal animal);
+    void place(Animal animal) throws IncorrectPositionException;
 
     /**
      * Moves an animal (if it is present on the map) according to specified direction.
@@ -41,8 +43,13 @@ public interface WorldMap extends MoveValidator {
      * @param position The position of the animal.
      * @return animal or null if the position is not occupied.
      */
+
     WorldElement objectAt(Vector2d position);
 
     Collection<WorldElement> getElements();
+
+    Boundary getCurrentBounds();
+
+    void addObserver(ConsoleMapDisplay observer);
 }
 

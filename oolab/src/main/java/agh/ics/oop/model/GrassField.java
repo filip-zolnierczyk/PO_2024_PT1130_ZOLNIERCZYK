@@ -1,5 +1,4 @@
 package agh.ics.oop.model;
-import agh.ics.oop.model.util.MapVisualizer;
 import java.util.*;
 
 
@@ -51,30 +50,16 @@ public class GrassField extends AbstractWorldMap {
         return elements;
     }
 
+
     @Override
-    public String toString() {
-        if (animals.isEmpty() && grasses.isEmpty()) {
-            return "Empty map";
-        }
+    public Boundary getCurrentBounds() {
+        Optional<Vector2d> lowerLeft = getElements().stream()
+                .map(WorldElement::getPosition)
+                .reduce(Vector2d::lowerLeft);
+        Optional<Vector2d> upperRight = getElements().stream()
+                .map(WorldElement::getPosition)
+                .reduce(Vector2d::upperRight);
 
-        final Map<Vector2d, WorldElement> WorldElements = new HashMap<>();
-        WorldElements.putAll(grasses);
-        WorldElements.putAll(animals);
-
-        int minY = Integer.MAX_VALUE;
-        int minX = Integer.MAX_VALUE;
-        int maxX = Integer.MIN_VALUE;
-        int maxY = Integer.MIN_VALUE;
-
-        for (Vector2d pos : WorldElements.keySet()) {
-            minX = Math.min(minX, pos.x);
-            minY = Math.min(minY, pos.y);
-            maxX = Math.max(maxX, pos.x);
-            maxY = Math.max(maxY, pos.y);
-        }
-
-
-        MapVisualizer visualizer = new MapVisualizer(this);
-        return visualizer.draw(new Vector2d(minX, minY), new Vector2d(maxX, maxY));
+        return new Boundary(lowerLeft.orElse(new Vector2d(0, 0)), upperRight.orElse(new Vector2d(0, 0)));
     }
 }

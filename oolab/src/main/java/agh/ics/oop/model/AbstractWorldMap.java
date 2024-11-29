@@ -1,20 +1,38 @@
 package agh.ics.oop.model;
 
+import agh.ics.oop.model.util.MapVisualizer;
 import java.util.*;
+import agh.ics.oop.model.exceptions.IncorrectPositionException;
 
 abstract class AbstractWorldMap implements WorldMap {
 
     public final Map<Vector2d, Animal> animals = new HashMap<>();
+    private final List<MapChangeListener> observers = new ArrayList<>();
+
+    public void addObserver(ConsoleMapDisplay observer) {
+        observers.add(observer);
+    }
+
+    public void removeObserver(ConsoleMapDisplay observer) {
+        observers.remove(observer);
+    }
+
+    protected void notifyObservers(String message) {
+        for (MapChangeListener observer : observers) {
+            observer.mapChanged(this, message);
+        }
+    }
+
+
 
     @Override
-    public boolean place(Animal animal) {
+    public void place(Animal animal) throws IncorrectPositionException {
         Vector2d position = animal.getPosition();
         if (!canMoveTo(position)) {
-            System.out.println("Cannot place animal at " + position + ". Position is occupied or out of bounds.");
-            return false;
+            throw new IncorrectPositionException(position);
         }
         animals.put(position, animal);
-        return true;
+        notifyObservers("Animal placed at " + animal.getPosition());
     }
 
     @Override
@@ -22,6 +40,7 @@ abstract class AbstractWorldMap implements WorldMap {
         animals.remove(animal.getPosition());
         animal.move(direction, this);
         animals.put(animal.getPosition(), animal);
+        notifyObservers("Animal moved to " + animal.getPosition());
     }
 
     @Override
@@ -42,6 +61,15 @@ abstract class AbstractWorldMap implements WorldMap {
     @Override
     public Collection<WorldElement> getElements() {
         return new ArrayList<>(animals.values());
+    }
+
+    public abstract Boundary getCurrentBounds();
+
+    @Override
+    public String toString() {
+        MapVisualizer visualizer = new MapVisualizer(this);
+        Boundary bounds = getCurrentBounds();
+        return visualizer.draw(bounds.lowerLeft(), bounds.upperRight());
     }
 }
 
