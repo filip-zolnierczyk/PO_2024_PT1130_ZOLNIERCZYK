@@ -51,5 +51,7 @@ public interface WorldMap extends MoveValidator {
     Boundary getCurrentBounds();
 
     void addObserver(ConsoleMapDisplay observer);
+
+    UUID getId();
 }
 

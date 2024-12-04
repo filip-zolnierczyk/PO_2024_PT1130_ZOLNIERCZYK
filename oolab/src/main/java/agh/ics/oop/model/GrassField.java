@@ -8,6 +8,7 @@ public class GrassField extends AbstractWorldMap {
     private final Random random;
 
     public GrassField(int grassCount, Random random) {
+        super();
         this.grassCount = grassCount;
         this.random = random;
         generateGrassFields();
