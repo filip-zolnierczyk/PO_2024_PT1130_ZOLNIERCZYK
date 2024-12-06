@@ -42,8 +42,6 @@ public class Simulation {
 
                 map.move(animal, direction);
 
-                System.out.println("Stan mapy po ruchu " + moveIndex + ":");
-                System.out.println(map);
 
                 moveIndex++;
                 animalIndex++;

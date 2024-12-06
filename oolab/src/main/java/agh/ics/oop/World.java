@@ -2,22 +2,39 @@ package agh.ics.oop;
 
 import agh.ics.oop.model.*;
 import java.util.List;
+import java.util.Arrays;
+import java.util.ArrayList;
 
 public class World {
     public static void main(String[] args) {
         try {
-            WorldMap map = new GrassField(10);
+            List<Simulation> simulations = new ArrayList<>();
+            int numberOfSimulations = 2;
 
-            ConsoleMapDisplay display = new ConsoleMapDisplay();
-            map.addObserver(display);
+            for (int i = 0; i < numberOfSimulations; i++) {
+                List<Vector2d> initialPositions = Arrays.asList(
+                        new Vector2d(2, 2),
+                        new Vector2d(3, 3)
+                );
 
-            List<MoveDirection> directions = OptionsParser.parse(args);
-            List<Vector2d> positions = List.of(new Vector2d(-3, -3), new Vector2d(3, 3));
-            Simulation simulation = new Simulation(positions, directions, map);
-            simulation.run();
+                List<MoveDirection> directions = OptionsParser.parse(args);
+
+                WorldMap map = new GrassField(10);
+                ConsoleMapDisplay mapDisplay = new ConsoleMapDisplay();
+                map.addObserver(mapDisplay);
+                Simulation simulation = new Simulation(initialPositions, directions, map);
+                simulations.add(simulation);
+            }
+
+            SimulationEngine engine = new SimulationEngine(simulations);
+
+            engine.runAsync();
+            engine.awaitSimulationsEnd();
+
+            System.out.println("System zakończył działanie.");
         } catch (IllegalArgumentException e) {
             System.out.println("Error: " + e.getMessage());
-            System.exit(1);  // Exit with error status
+            System.exit(1);
         }
     }
 }

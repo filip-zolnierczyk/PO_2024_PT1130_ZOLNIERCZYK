@@ -5,9 +5,14 @@ import java.util.*;
 import agh.ics.oop.model.exceptions.IncorrectPositionException;
 
 abstract class AbstractWorldMap implements WorldMap {
-
+    private final UUID id;
     public final Map<Vector2d, Animal> animals = new HashMap<>();
     private final List<MapChangeListener> observers = new ArrayList<>();
+    MapVisualizer visualizer = new MapVisualizer(this);
+
+    public AbstractWorldMap() {
+        this.id = UUID.randomUUID(); // Automatically generate a unique ID
+    }
 
     public void addObserver(ConsoleMapDisplay observer) {
         observers.add(observer);
@@ -23,6 +28,11 @@ abstract class AbstractWorldMap implements WorldMap {
         }
     }
 
+
+    @Override
+    public UUID getId() {
+        return id;
+    }
 
 
     @Override
@@ -67,7 +77,6 @@ abstract class AbstractWorldMap implements WorldMap {
 
     @Override
     public String toString() {
-        MapVisualizer visualizer = new MapVisualizer(this);
         Boundary bounds = getCurrentBounds();
         return visualizer.draw(bounds.lowerLeft(), bounds.upperRight());
     }
