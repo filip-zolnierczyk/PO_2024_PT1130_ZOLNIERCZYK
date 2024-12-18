@@ -13,7 +13,7 @@ import javafx.geometry.HPos;
 
 import java.util.List;
 
-public class SimulationPresenter {
+public class SimulationWindowPresenter {
     @FXML
     private GridPane mapGrid;
 
@@ -23,6 +23,16 @@ public class SimulationPresenter {
 
     @FXML
     private Button startButton;
+
+    @FXML
+    private Button newSimulationButton;
+
+    @FXML
+    public void onNewSimulationClicked() {
+        SimulationLauncher launcher = new SimulationLauncher();
+        launcher.launchNewSimulation();
+    }
+
 
     private AbstractWorldMap worldMap;
 
