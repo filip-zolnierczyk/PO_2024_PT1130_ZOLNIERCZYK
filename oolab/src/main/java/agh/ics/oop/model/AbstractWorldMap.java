@@ -4,7 +4,7 @@ import agh.ics.oop.model.util.MapVisualizer;
 import java.util.*;
 import agh.ics.oop.model.exceptions.IncorrectPositionException;
 
-abstract class AbstractWorldMap implements WorldMap {
+public abstract class AbstractWorldMap implements WorldMap {
     private final UUID id;
     public final Map<Vector2d, Animal> animals = new HashMap<>();
     private final List<MapChangeListener> observers = new ArrayList<>();
